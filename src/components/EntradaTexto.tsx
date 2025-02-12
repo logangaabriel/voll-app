@@ -2,14 +2,14 @@ import { FormControl, Input, ITextProps } from 'native-base';
 import { ReactNode } from 'react';
 
 interface EntradaTextoProps extends ITextProps {
-  children: ReactNode;
-  placeholderText: string; 
+  children?: ReactNode; // Tornando opcional
+  placeholderText: string;
 }
 
 export function EntradaTexto({ children, placeholderText, ...rest }: EntradaTextoProps) {
   return (
     <FormControl mt={3}>
-      <FormControl.Label>{children}</FormControl.Label>
+      {children && <FormControl.Label>{children}</FormControl.Label>}
       <Input
         placeholder={placeholderText}
         size="lg"

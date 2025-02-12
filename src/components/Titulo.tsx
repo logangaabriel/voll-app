@@ -6,7 +6,7 @@ interface TituloProps extends ITextProps {
 
 }
 
-export function Titulo({children}: TituloProps) {
+export function Titulo({children, ...rest}: TituloProps) {
     return (
         <Text 
         accessibilityLabel="Faça Login na sua conta"
@@ -15,6 +15,7 @@ export function Titulo({children}: TituloProps) {
        color="gray.500"
        textAlign="center"
        mt={5}
+       {...rest}
        >
         {children}
        </Text>
